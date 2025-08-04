@@ -7,13 +7,48 @@
  * copyright 2022 @codewithsadee
  */
 
+.experience-links {
+    margin-top: 5px; /* Space above the links */
+    margin-bottom: 5px; /* Space below the links */
+    display: flex; /* Arrange links in a row */
+    flex-wrap: wrap; /* Allow links to wrap to the next line on smaller screens */
+    gap: 5px; /* Space between links */
+  }
 
+  .link-button {
+    display: inline-flex; /* Align icon and text */
+    align-items: center; /* Vertically center icon and text */
+    padding: 5px 5px;
+    /* Example background color */
+    color: rgb(5, 5, 5);
+    text-decoration: none;
+    
+    font-size: 0.9em;
+    
+  }
+
+
+  .link-button ion-icon {
+    margin-right: 2px; /* Space between icon and text */
+  }
 
 
 
 /*-----------------------------------*\
   #CUSTOM PROPERTY
 \*-----------------------------------*/
+:root {
+  --background: #028090;        /* Teal blue background */
+  --cardbackground: #f9f9f9;    /* Light card background */
+  --primary: #f4d35e;           /* Golden yellow */
+  --primary-dark: #eeae00;      /* Darker gold */
+  --black: #000000;
+  --white: #ffffff;
+  --text: #1a1a1a;              /* Almost black for text */
+}
+
+
+
 
 :root {
 
@@ -25,28 +60,28 @@
 
   --bg-gradient-onyx: linear-gradient(
     to bottom right, 
-    hsl(240, 1%, 25%) 3%, 
-    hsl(0, 0%, 19%) 97%
+    #77a7ae, 
+    #77a7ae
   );
   --bg-gradient-jet: linear-gradient(
     to bottom right, 
-    hsla(240, 1%, 18%, 0.251) 0%, 
-    hsla(240, 2%, 11%, 0) 100%
-  ), hsl(240, 2%, 13%);
+    #77a7ae, 
+    #77a7ae
+  ), #77a7ae;
   --bg-gradient-yellow-1: linear-gradient(
     to bottom right, 
     hsl(45, 100%, 71%) 0%, 
-    hsla(36, 100%, 69%, 0) 50%
+    #77a7ae
   );
   --bg-gradient-yellow-2: linear-gradient(
     135deg, 
-    hsla(45, 100%, 71%, 0.251) 0%, 
-    hsla(35, 100%, 68%, 0) 59.86%
-  ), hsl(240, 2%, 13%);
+    #77a7ae, 
+    #77a7ae
+  ), #77a7ae;
   --border-gradient-onyx: linear-gradient(
     to bottom right, 
-    hsl(0, 0%, 25%) 0%, 
-    hsla(0, 0%, 25%, 0) 50%
+    #77a7ae, 
+    #77a7ae
   );
   --text-gradient-yellow: linear-gradient(
     to right, 
@@ -56,18 +91,18 @@
 
   /* solid */
 
-  --jet: hsl(0, 0%, 22%);
-  --onyx: hsl(240, 1%, 17%);
-  --eerie-black-1: hsl(240, 2%, 13%);
-  --eerie-black-2: hsl(240, 2%, 12%);
-  --smoky-black: hsl(0, 0%, 7%);
-  --white-1: hsl(0, 0%, 100%);
-  --white-2: hsl(0, 0%, 98%);
+  --jet: #77a7ae;
+  --onyx: #77a7ae;
+  --eerie-black-1: #77a7ae;
+  --eerie-black-2: var(--cardbackground);    /* background */
+  --smoky-black: var(--background);         /* background */
+  --white-1: var(--text);  /* modi */
+  --white-2: var(--text);/* modi */
   --orange-yellow-crayola: hsl(45, 100%, 72%);
   --vegas-gold: hsl(45, 54%, 58%);
-  --light-gray: hsl(0, 0%, 84%);
-  --light-gray-70: hsla(0, 0%, 84%, 0.7);
-  --bittersweet-shimmer: hsl(0, 43%, 51%);
+  --light-gray: var(--text);/* modi */
+  --light-gray-70:var(--text);/* modi */
+  --bittersweet-shimmer: #77a7ae;
 
   /**
    * typography
@@ -97,10 +132,10 @@
    */
   
   --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
-  --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
-  --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
-  --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
-  --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
+  --shadow-2: 0 16px 30px #77a7ae;
+  --shadow-3: 0 16px 40px #77a7ae;
+  --shadow-4: 0 25px 50px #77a7ae;
+  --shadow-5: 0 24px 80px #77a7ae;
 
   /**
    * transition
@@ -350,7 +385,7 @@ main {
 }
 
 .avatar-box img:hover {
-  transform: scale(0.8); /* Slight zoom on hover for an interactive effect */
+  transform: scale(1); /* Slight zoom on hover for an interactive effect */
 }
 
 
@@ -365,12 +400,12 @@ main {
 
 .info-content .title {
   color: var(--white-1);
-  background: var(--onyx);
+  
   font-size: var(--fs-8);
   font-weight: var(--fw-300);
   width: max-content;
   padding: 3px 12px;
-  border-radius: 8px;
+  border-radius: 2px;
 }
 
 .info_more-btn {
@@ -378,9 +413,9 @@ main {
   top: -15px;
   right: -15px;
   border-radius: 0 15px;
-  font-size: 13px;
-  color: var(--orange-yellow-crayola);
-  background: var(--border-gradient-onyx);
+  font-size: 25px;
+  color: var(--text-dark);
+  background: var(--accent);
   padding: 10px;
   box-shadow: var(--shadow-2);
   transition: var(--transition-1);
@@ -455,6 +490,7 @@ main {
   gap: 15px;
   padding-bottom: 4px;
   padding-left: 7px;
+  
 }
 
 .social-item .social-link {
@@ -478,7 +514,7 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: hsla(240, 1%, 17%, 0.75);
+  background:var(--onyx) ;
   backdrop-filter: blur(10px);
   border: 1px solid var(--jet);
   border-radius: 12px 12px 0 0;
@@ -678,14 +714,16 @@ main {
 .achievements-list {
   list-style: none;
   padding: 0;
-  text-align: center; /* Centers text */
+   /* Centers text */
 }
 
 .achievement-item {
   margin-bottom: 40px; /* Adds spacing between achievements */
+  
 }
 
 .achievement-text {
+  display: flex;
   font-size: 1rem; /* Larger text */
   font-weight: bold;
   color: var(--light-gray);
@@ -701,8 +739,8 @@ main {
 }
 
 .proof img {
-  width: 85%; /* Makes the image large and responsive */
-  max-width: 600px; /* Limits max size */
+  width: 70%; /* Makes the image large and responsive */
+  max-width: 500px; /* Limits max size */
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -712,6 +750,32 @@ main {
 .proof img:hover {
   transform: scale(1.05); /* Slight zoom effect on hover */
 }
+
+/* New class to make the <p> and <a> inside this specific <li> appear inline */
+.certificate-link {
+    display: flex; /* Makes its direct children (the p and the a) flex items */
+    align-items: center; /* Vertically centers the text and the link */
+    gap: 10px; /* Adds 10px space between the text and the link */
+    flex-wrap: wrap; /* Allows content to wrap to the next line on smaller screens if too long */
+
+    /*
+     * Important: Keep any other .achievement-item styles you want inherited,
+     * or explicitly override them here if you want this item to behave differently
+     * from other achievement-items.
+     *
+     * For example, if .achievement-item has margin-left: 15px; you'd probably
+     * want to keep that for consistency.
+     */
+}
+
+/* Ensure the paragraph within this specific entry has no vertical margins */
+.certificate-link .achievement-text {
+    margin: 0; /* Crucial: Removes default top/bottom margins from the <p> tag */
+    /* Optional: If you want the text to expand and push the link more to the right, add: */
+    /* flex-grow: 1; */
+}
+
+
 
 
 
@@ -880,7 +944,7 @@ main {
 
 .project-description {
   background: var(--eerie-black-2);
-  padding: 15px;
+  padding: 10px;
   border-radius: 10px;
   color: var(--light-gray);
   text-align: left;
@@ -905,11 +969,14 @@ main {
 .project-links {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin-top: 15px;
+  gap: 5px;
+  margin-top: 2px;
+  flex-wrap: wrap; 
 }
 
 .project-links .btn {
+  display: flex;
+  align-items: center;
   background: var(--jet);
   color: var(--light-gray);
   padding: 8px 15px;
@@ -917,11 +984,56 @@ main {
   text-decoration: none;
   font-size: var(--fs-6);
   transition: 0.3s ease-in-out;
+  
 }
 
 .project-links .btn:hover {
   background: var(--orange-yellow-crayola);
   color: var(--white-2);
+}
+
+/* Style for the new headings within the description (Problem, Solution, etc.) */
+.project-description .description-heading {
+    font-size: var(--fs-6); /* Adjust as needed, usually slightly larger than body text */
+    color: var(--orange-yellow-crayola); /* Use your highlight color */
+    font-weight: var(--fw-500); /* Make them stand out */
+    margin-top: 4px; /* Space above each heading */
+    margin-bottom: 3px; /* Space below each heading */
+}
+
+/* Style for the main description paragraphs */
+.project-description .description-text {
+    font-size: var(--fs-7); /* Make body text slightly smaller for better density */
+    line-height: 1.7; /* Increased line spacing for better readability */
+    margin-bottom: 1px; /* Space between description paragraphs */
+    color: var(--light-gray); /* Ensure consistent text color */
+}
+
+/* Style for lists within the description (Tech Stack, Key Features) */
+.project-description .description-list {
+    list-style-type: none; /* Remove default bullets (since we'll use custom ones) */
+    padding-left: 0;
+    margin-left: 0;
+    margin-bottom: 10px; /* Space below the list */
+}
+
+.project-description .description-list li {
+    font-size: var(--fs-7); /* Consistent with body text font size */
+    color: var(--light-gray);
+    line-height: 1.6;
+    margin-bottom: 5px; /* Space between list items */
+
+    /* Custom bullet point styling */
+    position: relative;
+    padding-left: 15px; /* Space for the custom bullet */
+}
+
+.project-description .description-list li::before {
+    content: '•'; /* The custom bullet character */
+    position: absolute;
+    left: 0;
+    color: var(--orange-yellow-crayola); /* Using your highlight color for bullets */
+    font-weight: bold;
 }
 
 
